@@ -1,81 +1,39 @@
----
-title: "PinPoint FAQ: answers to frequently asked questions"
-description: "Answers to the most common questions about PinPoint: what Always-on-Top means, system requirements, hotkeys, config storage, and more."
----
-
-This page answers the questions that come up most often about PinPoint. If you are new to the app, start with the first few entries for a quick orientation. If you have a specific problem rather than a question, see the [Troubleshooting](/troubleshooting) page instead.
+Answers to the most common questions about PinPoint.
 
 <AccordionGroup>
-  <Accordion title="What does 'Always-on-Top' mean?">
-    Always-on-Top is a standard Windows window property that keeps a window in front of every other window on your screen — even when you click away to a different application. Normally, the window you click becomes the frontmost window. With Always-on-Top enabled, the pinned window ignores that rule and stays visible on top at all times.
+  <Accordion title="Can I use the Windows key in my hotkey?">
+    Yes, you can include the Windows key (**Win**) in your hotkey combination. However, be aware that Windows reserves many Windows-key shortcuts for its own use (for example, **Win\+E** opens File Explorer). If you choose a combination that Windows already claims, it will intercept the keypress before PinPoint can act on it.
 
-    PinPoint toggles this property on and off for the currently focused window with a single hotkey press. Press the hotkey once to pin; press it again to unpin.
+    Choose a combination that isn't already used by Windows or other apps. If your hotkey stops working after you set it, try a different combination.
   </Accordion>
 
-  <Accordion title="Does PinPoint work on macOS or Linux?">
-    No. PinPoint is a Windows-only application. It relies on Windows-specific APIs for global hotkey registration, window management, and the system tray. There is no macOS or Linux version available.
+  <Accordion title="How many windows can I pin at once?">
+    There is no hard limit. You can pin as many windows as you like — each one stays on top until you unpin it individually or use **Unpin All** from the tray menu.
   </Accordion>
 
-  <Accordion title="Can I pin multiple windows at once?">
-    Yes. You can pin as many windows as you like at the same time. Each pinned window gets its own colored border indicator so you can see at a glance which windows are currently on top. You can also view and unpin any of them individually from the PinPoint tray menu.
-  </Accordion>
-
-  <Accordion title="Will PinPoint slow down my computer?">
-    No. PinPoint is designed to be extremely lightweight. It runs as a small background process in the system tray, uses minimal CPU and memory, and has no background network activity. You are unlikely to notice it in Task Manager.
-  </Accordion>
-
-  <Accordion title="Does PinPoint require an internet connection?">
-    No. PinPoint works entirely offline. It does not connect to any server, send telemetry, or check for updates over the network. All processing happens locally on your machine.
-  </Accordion>
-
-  <Accordion title="What happens when I close the settings window?">
-    Closing the Settings window does not quit PinPoint. The app continues running in the system tray and your hotkey keeps working exactly as before. The Settings window is just a panel — PinPoint's core functionality runs independently of it.
-
-    PinPoint only stops if you explicitly choose **Quit** from the tray icon's right-click menu.
-  </Accordion>
-
-  <Accordion title="How do I completely close PinPoint?">
-    Right-click the PinPoint icon in your system tray and choose **Quit**. A confirmation dialog will appear — confirm to exit. Once PinPoint exits, the global hotkey stops working and no windows will be newly pinned until you relaunch the app. Any windows that were already pinned will retain their Always-on-Top status until they are closed or you manually change their properties.
-  </Accordion>
-
-  <Accordion title="How do I stop PinPoint from starting with Windows?">
-    PinPoint adds itself to the Windows startup list automatically when it is installed. To disable this:
-
-    - **Using Task Manager:** Open Task Manager (Ctrl+Shift+Esc) → click the **Startup apps** tab → find **PinPoint** in the list → right-click → **Disable**.
-    - **Using Windows Settings:** Go to **Settings** → **Apps** → **Startup** → find PinPoint and toggle it off.
-
-    After disabling startup, PinPoint will no longer launch automatically when you sign in to Windows. You can relaunch it manually at any time from the Start menu.
+  <Accordion title="Does PinPoint work across multiple monitors?">
+    Yes. PinPoint pins windows at the Windows API level, so pinned windows stay on top regardless of which monitor they are on. You can move a pinned window between monitors and it will remain Always-on-Top.
   </Accordion>
 
   <Accordion title="Where is my configuration stored?">
     PinPoint saves your settings to a file called `config.json` at the following path:
 
-    ```
+    ```text
     %APPDATA%\com.automatalabs.pinpoint\config.json
     ```
 
     You can paste that path directly into the Windows Explorer address bar to open the folder. You generally do not need to edit this file directly — every setting is accessible from the PinPoint Settings window and saves automatically as you change it.
   </Accordion>
 
-  <Accordion title="Can I use the Windows key in my hotkey?">
-    Yes. You can include the Windows key (sometimes called the Super key) as a modifier in your custom hotkey combination. Open **Settings** and use the hotkey recorder to set your preferred combination.
+  <Accordion title="How do I stop PinPoint from starting with Windows?">
+    There are two ways:
 
-    Keep in mind that Windows reserves many Windows-key shortcuts for its own use (for example, Win+D, Win+L, Win+E). If you choose a combination that Windows already claims, it may not be capturable by PinPoint. If your chosen hotkey does not register, try a different combination.
+    **Using PinPoint Settings:** Open the PinPoint Settings window and turn off the **Start with Windows** (auto-start) toggle. PinPoint will no longer launch automatically on login.
+
+    **Using Windows Settings:** Go to **Settings → Apps → Startup** and toggle PinPoint off from the list of startup apps.
   </Accordion>
 
-  <Accordion title="Is PinPoint free?">
-    Visit [automatalabs.ca](https://automatalabs.ca) for current pricing and availability information. Automata Labs may offer a free tier, a trial, or a paid license depending on the current distribution model.
-  </Accordion>
-
-  <Accordion title="Where can I find more Automata Labs products?">
-    Automata Labs makes several other Windows utilities alongside PinPoint:
-
-    - **StayGreen** 
-    - **Taskbar Sentinel**
-    - **IntelliClip**
-    - **LockGhost**
-    - **TimeFence**
-
-    Visit [automatalabs.ca](https://automatalabs.ca) to learn more about each product.
+  <Accordion title="Can I change the hotkey to something without Alt?">
+    Your hotkey must include at least one modifier key (**Ctrl**, **Alt**, **Shift**, or **Win**). You cannot set a hotkey that is just a single key with no modifier. This is a requirement of the Windows global hotkey API.
   </Accordion>
 </AccordionGroup>

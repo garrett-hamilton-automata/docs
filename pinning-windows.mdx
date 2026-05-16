@@ -1,1 +1,41 @@
-placeholder
+Learn how to pin any window to Always-on-Top using PinPoint's hotkey, see which windows are pinned, and unpin them individually or all at once.
+
+## Pinning a window
+
+Pinning a window takes three steps. PinPoint works by toggling Always-on-Top on and off for whichever window is currently focused.
+
+<Steps>
+  <Step title="Make sure PinPoint is running">
+    Look for the PinPoint icon in your system tray. If you don't see it, launch PinPoint from the Start menu before continuing.
+  </Step>
+  <Step title="Focus the window you want to pin">
+    Click the window to bring it into focus. Its title bar should be highlighted, indicating it is the active window.
+  </Step>
+  <Step title="Press your hotkey">
+    Press **Alt\+P** (or your custom hotkey). A colored border appears around the window — it is now pinned to Always-on-Top and will stay visible above all other windows.
+  </Step>
+</Steps>
+
+To unpin the window, press your hotkey again while the window is focused. The border disappears and the window returns to normal stacking order.
+
+## Visual indicator
+
+PinPoint draws a colored border around every pinned window so you can tell at a glance which windows are on top.
+
+- On **Windows 11**, the border uses the native DWM (Desktop Window Manager) border color built into Windows.
+- On **Windows 10**, PinPoint draws a framing overlay on top of and around the pinned window to simulate the border.
+
+You can change the border color and thickness — or turn it off entirely — in **Settings \> Border**.
+
+## Seeing which windows are pinned
+
+Right-click the PinPoint tray icon to see a list of all currently pinned windows. Each entry shows the window title.
+
+## Unpinning windows
+
+- **Unpin one window** — press your hotkey while the window is focused, or right-click the tray icon and click the window's name.
+- **Unpin all windows** — right-click the tray icon and choose **Unpin All**.
+
+<Note>
+  PinPoint cannot pin the desktop, the taskbar, or certain system windows. If your hotkey has no effect, make sure you have a regular application window in focus.
+</Note>

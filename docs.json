@@ -37,7 +37,19 @@
           },
           {
             "group": "Settings",
-            "pages": []
+            "pages": [
+              "settings/overview",
+              "settings/appearance",
+              "settings/border",
+              "settings/language"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "troubleshooting",
+              "faq"
+            ]
           }
         ]
       }
