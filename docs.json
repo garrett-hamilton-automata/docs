@@ -1,0 +1,62 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "PinPoint",
+  "favicon": "https://media.brand.dev/2d7d0610-de0e-4d2d-9bbf-136f91834b50.png",
+  "colors": {
+    "primary": "#218ecc",
+    "light": "#ebf7f8",
+    "dark": "#7c98b0"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/garrett-hamilton-automata/pinpoint"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quick-start"
+            ]
+          },
+          {
+            "group": "Using PinPoint",
+            "pages": [
+              "pinning-windows",
+              "system-tray",
+              "hotkey"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/overview",
+              "settings/appearance",
+              "settings/border",
+              "settings/language"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "troubleshooting",
+              "faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": "/images/Automata_Labs_2025_Logo_Web_2.svg",
+  "thumbnails": {
+    "background": "/images/Automata_Labs_2025_Logo_Web_2.svg"
+  }
+}

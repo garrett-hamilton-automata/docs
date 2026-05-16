@@ -1,0 +1,79 @@
+---
+title: "Troubleshoot PinPoint: fix hotkeys, borders, and more"
+description: "Fix the most common PinPoint problems: hotkey not working, missing tray icon, border not showing, and windows that can't be pinned."
+---
+
+This page covers the issues users run into most often with PinPoint. Find the symptom that matches your situation, expand it, and follow the steps listed. Most problems have a quick fix.
+
+<AccordionGroup>
+  <Accordion title="My hotkey doesn't do anything">
+    If pressing **Alt+P** (or your custom hotkey) has no effect, work through these checks in order:
+
+    - **PinPoint may not be running.** Look for the PinPoint icon in your Windows system tray (bottom-right corner of the taskbar). If you don't see it, relaunch PinPoint from the Start menu or your desktop shortcut.
+    - **Another app may have claimed the same hotkey.** Global hotkeys are exclusive — only one app can hold a combination at a time. Open PinPoint **Settings** and change your hotkey to a combination that no other running app uses.
+    - **The focused window may be a shell or desktop window.** PinPoint cannot pin the desktop, the taskbar, or certain system windows. Click a regular application window first, then press your hotkey.
+    - **PinPoint may need a restart.** Right-click the tray icon and choose **Quit**, then relaunch PinPoint. This re-registers the global hotkey with Windows.
+  </Accordion>
+
+  <Accordion title="I can't pin a window — I get a notification about elevated windows">
+    If you see a Windows notification that says "Cannot pin elevated windows. Restart PinPoint as Administrator," the window you are trying to pin belongs to a process that is running with Administrator privileges.
+
+    To pin elevated windows, PinPoint itself must also run as Administrator:
+
+    1. Right-click the PinPoint tray icon and choose **Quit**.
+    2. Find the PinPoint shortcut in your Start menu or on your desktop.
+    3. Right-click the shortcut and choose **Run as administrator**.
+    4. PinPoint will relaunch with elevated privileges and will be able to pin Administrator windows.
+
+    <Warning>
+      Running any app as Administrator gives it elevated privileges. Only do this if you regularly need to pin windows that belong to Administrator processes.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="The PinPoint tray icon has disappeared">
+    A missing tray icon does not necessarily mean PinPoint has stopped working. Try these steps:
+
+    - **It may be hidden in the overflow area.** Click the **^** arrow at the far right of your taskbar to reveal icons that Windows has moved out of the visible tray area. You can drag the PinPoint icon back to the visible area to keep it accessible.
+    - **PinPoint may have crashed or been closed.** Relaunch it from the Start menu or your desktop shortcut. Once running, the icon will reappear in the tray.
+    - **If the icon still won't appear,** try restarting your computer. Windows occasionally fails to load tray icons correctly after long uptime or after sleep cycles, and a reboot resolves this.
+  </Accordion>
+
+  <Accordion title="The colored border is not visible">
+    PinPoint draws a colored border around pinned windows as a visual indicator. If the border is not appearing:
+
+    - **Check that the border is enabled.** Open PinPoint **Settings** and make sure the **Enable border** option is turned on.
+    - **On Windows 11,** the border is applied as a colored accent to the edge of the window's title bar using the native Windows composition layer. It can look subtle depending on your chosen color. Try a high-contrast color such as cyan (`#00FFFF`) to confirm the border is working before settling on your preferred shade.
+    - **On Windows 10,** PinPoint draws a framing overlay on top of the window. If the overlay looks distorted or misaligned, try resizing the pinned window slightly — this forces Windows to redraw the overlay and usually corrects alignment issues.
+  </Accordion>
+
+  <Accordion title="PinPoint opens a settings window every time Windows starts">
+    By default, PinPoint is configured to show its Settings window on launch so you can confirm everything is set up the way you want. Once you have finished setting up, you can disable this:
+
+    1. Open the PinPoint **Settings** window.
+    2. Uncheck **Open settings when PinPoint starts**.
+    3. Close or send PinPoint to the tray.
+
+    From that point on, PinPoint will start silently in the background without opening any window.
+  </Accordion>
+
+  <Accordion title="My settings got reset to defaults">
+    If your settings appear to have reverted to their defaults, `config.json` likely became corrupted — this can happen after an unexpected shutdown or a disk error. PinPoint detects the problem automatically: it backs up the corrupt file as `config.invalid.json` in the same folder (`%APPDATA%\com.automatalabs.pinpoint\`) and then loads its built-in defaults.
+
+    To recover:
+
+    1. Open PinPoint **Settings** and re-apply your preferred options. All changes save automatically as you make them.
+    2. If you want to inspect what went wrong, you can open `config.invalid.json` in a text editor to see the last saved state before the corruption.
+  </Accordion>
+
+  <Accordion title="The hotkey works but the window doesn't stay on top">
+    In rare cases, a window may appear to lose its Always-on-Top status shortly after you pin it. This can happen with applications that aggressively manage their own window stacking order — they periodically reassert their z-order, which can temporarily override PinPoint's topmost flag.
+
+    - **Press your hotkey again** while the window is focused to re-pin it. The colored border should reappear to confirm the pin is active.
+    - PinPoint periodically re-asserts topmost status in the background, so most windows stay pinned reliably. Highly aggressive apps (certain games, full-screen utilities, or apps with custom window management) may still occasionally win the z-order battle.
+    - If a specific app consistently breaks out of Always-on-Top, the app itself is likely overriding the Windows flag — this is a limitation of the Windows API rather than a PinPoint bug.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  If you're still having trouble, visit [automatalabs.ca](https://automatalabs.ca) for support resources or to contact Automata Labs.
+</Note>

@@ -1,0 +1,79 @@
+{
+  "projectType": "general",
+  "projectName": "PinPoint",
+  "projectDescription": "PinPoint is a lightweight Windows desktop utility that lets you instantly pin any window to Always-on-Top with a customizable global hotkey — no more digging through window menus.",
+  "theme": "almond",
+  "primaryColor": "#218ecc",
+  "lightColor": "#ebf7f8",
+  "darkColor": "#7c98b0",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quick-start"
+            ]
+          },
+          {
+            "group": "Using PinPoint",
+            "pages": [
+              "pinning-windows",
+              "system-tray",
+              "hotkey"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/overview",
+              "settings/appearance",
+              "settings/border",
+              "settings/language"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "troubleshooting",
+              "faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Global hotkey to toggle Always-on-Top for any window (default: Alt+P)",
+    "Visual border overlay highlights pinned windows",
+    "System tray icon with quick access to pinned windows and settings",
+    "Customizable hotkey — set any keyboard shortcut",
+    "Customizable border color, thickness, and enable/disable toggle",
+    "Light, dark, and system theme modes",
+    "Multiple UI background color presets",
+    "Optional sound effects on pin/unpin",
+    "Multi-language support (11 languages)",
+    "Runs silently in the background; auto-starts with Windows",
+    "Unpin individual windows or all at once from the tray menu"
+  ],
+  "publicApiSurface": [
+    "Global hotkey: toggle Always-on-Top for the focused window",
+    "Settings: hotkey (string, e.g. 'alt+p')",
+    "Settings: border_enabled (bool)",
+    "Settings: border_color (hex string, e.g. '#FF0000')",
+    "Settings: border_thickness (number, 1–255)",
+    "Settings: sound_enabled (bool)",
+    "Settings: theme ('light' | 'dark' | 'system')",
+    "Settings: ui_background ('default' | 'deep_navy' | 'slate_gray' | 'forest_green' | 'midnight_purple')",
+    "Settings: language ('en' | 'es' | 'zh' | 'hi' | 'ja' | 'fr' | 'de' | 'pt' | 'ru' | 'ko' | 'it')",
+    "Settings: show_on_startup (bool)",
+    "System tray: Unpin individual window",
+    "System tray: Unpin All",
+    "System tray: Open Settings",
+    "System tray: Quit PinPoint"
+  ]
+}

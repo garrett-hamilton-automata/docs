@@ -1,0 +1,56 @@
+---
+title: "How to pin any window to Always-on-Top with PinPoint"
+description: "Learn how to pin any window to Always-on-Top using PinPoint's hotkey, see which windows are pinned, and unpin them individually or all at once."
+---
+
+This page explains how to pin a window so it stays on top of everything else on your screen, how to tell when a window is pinned, how to unpin it, and which windows PinPoint can and cannot pin.
+
+## Pinning a window
+
+Pinning a window takes three steps. PinPoint works by toggling Always-on-Top on whichever window currently has focus, so you start by giving focus to the window you want to pin.
+
+<Steps>
+  <Step title="Click the window you want to pin">
+    Click anywhere inside the window to give it focus. The window's title bar should become active (not grayed out).
+  </Step>
+  <Step title="Press your hotkey">
+    Press **Alt+P** (the default hotkey). PinPoint captures the keypress globally, so you don't need to click the tray icon first.
+  </Step>
+  <Step title="Confirm the visual indicator">
+    A colored border appears around the window. That border means the window is now Always-on-Top and will stay visible above every other window until you unpin it.
+  </Step>
+</Steps>
+
+## Unpinning a window
+
+You have three ways to unpin a window, depending on which is most convenient at the moment.
+
+- **Press the hotkey again** — give focus to the pinned window (click it), then press **Alt+P**. The border disappears and the window returns to normal stacking order.
+- **Use the tray menu** — right-click the PinPoint icon in the system tray. Each pinned window appears in the menu by title. Click the title of the window you want to unpin.
+- **Unpin everything at once** — right-click the tray icon and choose **Unpin All**. This removes Always-on-Top from every pinned window in one action.
+
+## Visual indicator
+
+When a window is pinned, PinPoint draws a colored border around it so you always know which windows are floating. The behavior differs slightly depending on your version of Windows:
+
+- **Windows 11** — PinPoint uses the native DWM (Desktop Window Manager) border color built into Windows. The border is part of the window frame itself.
+- **Windows 10** — PinPoint draws a layered overlay window on top of and around the pinned window to simulate the border.
+
+You can change the border color and thickness in **Settings > Border**. The default color is red (`#FF0000`) at 4 px thickness.
+
+## What you can and cannot pin
+
+**You can pin** any regular application window: browsers, code editors, media players, terminals, document viewers, chat apps, and so on.
+
+**You cannot pin:**
+
+- PinPoint's own settings window — PinPoint intentionally blocks itself from being pinned.
+- The Windows desktop, taskbar, or shell — these system-level surfaces cannot be pinned.
+
+<Warning>
+  You cannot pin windows that belong to processes running as Administrator unless PinPoint is also running as Administrator. If you see a Windows notification saying "Cannot pin elevated windows", right-click the PinPoint tray icon and select **Settings**, then restart PinPoint as Administrator.
+</Warning>
+
+## Pinning multiple windows
+
+You can pin as many windows as you want at the same time. Each pinned window gets its own colored border, and every pinned window title appears individually in the tray menu. To unpin a specific one, click its title in the tray menu. To clear them all, choose **Unpin All**.

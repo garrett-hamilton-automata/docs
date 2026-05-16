@@ -1,0 +1,63 @@
+---
+title: "Configure the border around pinned windows in PinPoint"
+description: "Configure the colored border PinPoint draws around pinned windows — change the color, adjust thickness, or disable the border entirely."
+---
+
+When you pin a window, PinPoint draws a colored border around it so you can identify pinned windows at a glance without checking the tray or pressing a hotkey. The border is purely visual — it does not block clicks or resize the window. This page explains how to change the border color and thickness, and how to turn the border off if you prefer no visual indicator.
+
+## Enable or disable the border
+
+The border is enabled by default. When it is disabled, PinPoint adds no visual decoration to pinned windows. All other features — including the global hotkey and sound effects — continue to work normally.
+
+To toggle the border:
+
+<Steps>
+  <Step title="Open Settings">
+    Right-click the PinPoint tray icon and choose **Settings**.
+  </Step>
+  <Step title="Toggle the checkbox">
+    Check or uncheck **Enable border** in the Border section.
+  </Step>
+</Steps>
+
+## Border color
+
+The default border color is red (`#FF0000`). You can change it to any color using the color picker or by entering a hex value directly.
+
+To change the border color:
+
+<Steps>
+  <Step title="Open Settings">
+    Right-click the PinPoint tray icon and choose **Settings**.
+  </Step>
+  <Step title="Open the color picker or enter a hex value">
+    Click the color swatch to open the color picker and drag to choose a color, **or** click the hex text field next to the swatch and type a six-character hex value (for example, `#00FFFF`).
+  </Step>
+  <Step title="Confirm the color">
+    Release the color picker or press Tab to move out of the hex field. The change saves automatically.
+  </Step>
+</Steps>
+
+The border on any currently pinned window updates live as you drag the color picker, so you can preview the result before committing.
+
+<Tip>
+  Pick a bright, high-contrast color like cyan or yellow so pinned windows stand out at a glance on any background.
+</Tip>
+
+## Border thickness
+
+The default border thickness is **4 pixels**. PinPoint scales this value automatically for high-DPI displays, so 4 pixels looks the same size on a 4K monitor as it does on a standard 1080p screen.
+
+To adjust the thickness, open **Settings** and use the thickness control in the Border section. Valid values are 1–255 pixels.
+
+## Windows 10 vs Windows 11
+
+PinPoint uses a different technique to draw the border depending on your Windows version.
+
+**Windows 11** — PinPoint uses the native Desktop Window Manager (DWM) border color, which appears as a colored accent around the window's title bar area. This is the same mechanism Windows uses for its own accent color feature.
+
+**Windows 10** — PinPoint draws a transparent overlay window that frames the target window from the outside.
+
+<Note>
+  On Windows 11, the border thickness setting has no effect — the native border width is controlled by Windows.
+</Note>
